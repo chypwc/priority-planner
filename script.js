@@ -52,7 +52,11 @@ function addTask() {
 
   const deleteBtn = document.createElement("button");
   deleteBtn.classList.add("delete-btn");
-  deleteBtn.textContent = "❌";
-  deleteBtn.onclick = () => li.remove(); // Remove list item
+  deleteBtn.textContent = "✔️"; // ❌
+  deleteBtn.onclick = () => {
+    li.classList.add("removing");
+    // setTimeout(callback, delayInMilliseconds),  matches transition time 400ms,
+    setTimeout(() => li.remove(), 400);
+  };
   li.appendChild(deleteBtn);
 }

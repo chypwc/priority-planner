@@ -61,7 +61,13 @@ button:hover {
     display: flex;                /* NEW: make it a flex container */
     justify-content: space-between; /* space between task text and button */
     align-items: center;         /* vertically center items */
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
+
+.task.removing {
+    opacity: 0;
+    transform: translateX(100px); 
+} 
 
 .delete-btn {
     background-color: rgb(187, 182, 182);
