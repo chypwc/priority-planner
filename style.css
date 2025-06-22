@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 30px;
+        background-color: rgb(228, 227, 227);
+}
+
+h2 {
+    margin-bottom: 10px;
+    color: #1f3a4b;
+}
+
+input, select, button {
+    padding: 10px 14px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    height: 37px;
+    border-radius: 6px;
+    border: 1px solid #dad8d8;
+    box-sizing: border-box;
+    outline:none;
+}
+
+input:focus, select.focus {
+    border-color: #3498db;
+}
+
+button {
+    background-color: #3498db;
+    color: whitesmoke;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+button:hover {
+    background-color: #3078a8; 
+}
+
+.high {
+    background-color: rgb(208, 91, 91);
+}
+
+.medium {
+    background-color: rgb(61, 154, 101);
+}
+
+.low {
+    background-color: rgb(65, 109, 186);
+}
+
+.task {
+    padding: 10px;
+    margin: 10px 0px;
+    border-radius: 5px;
+    color: beige;
+    list-style-type: none;
+}
+
+
+
+
+
+
+
