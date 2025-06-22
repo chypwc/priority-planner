@@ -51,14 +51,32 @@ button:hover {
     background-color: rgb(65, 109, 186);
 }
 
+
 .task {
     padding: 10px;
     margin: 10px 0px;
     border-radius: 5px;
     color: beige;
     list-style-type: none;
+    display: flex;                /* NEW: make it a flex container */
+    justify-content: space-between; /* space between task text and button */
+    align-items: center;         /* vertically center items */
 }
 
+.delete-btn {
+    background-color: rgb(187, 182, 182);
+    padding:1px;
+    width: auto; 
+    height: auto;
+    border: none;
+    margin-left: 16px;
+    font-size: 12px;
+    margin-top:5px;
+    align-items: center;   
+}
+.delete-btn:hover {
+    background-color: rgb(145, 131, 131);
+}
 
 
 

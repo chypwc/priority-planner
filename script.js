@@ -49,4 +49,10 @@ function addTask() {
 
   // Append to the list
   taskList.appendChild(li);
+
+  const deleteBtn = document.createElement("button");
+  deleteBtn.classList.add("delete-btn");
+  deleteBtn.textContent = "❌";
+  deleteBtn.onclick = () => li.remove(); // Remove list item
+  li.appendChild(deleteBtn);
 }
