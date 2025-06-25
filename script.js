@@ -38,25 +38,35 @@ function addTask() {
   console.log("tasks", tasks);
   //  clean text input block
   taskInput.value = "";
-
+  renderTask();
+}
+function renderTask() {
   const taskList = document.getElementById("taskList");
+  taskList.innerHTML = ""; // ✅ Clear existing tasks
+  for (let i = 0; i < tasks.length; i++) {
+    const item = tasks[i];
+    // Create a new list item
+    const li = document.createElement("li");
+    li.className = "task " + item.importance; // li.classList.add("task", importance);
+    li.textContent = `${item.task} (Priority: ${item.priority})`;
 
-  // Create a new list item
-  const li = document.createElement("li");
-  li.textContent = `${task} (Priority: ${priority})`;
+    const deleteBtn = document.createElement("button");
+    deleteBtn.classList.add("delete-btn");
+    deleteBtn.textContent = "✔️";
+    deleteBtn.onclick = () => {
+      li.classList.add("removing"); // This adds a CSS class called "removing" to the <li> (the task list item). This class should apply a visual transition (like fading or sliding out).
 
-  li.classList.add("task", importance);
+      setTimeout(() => {
+        // Step 1: Remove from array
+        tasks.splice(i, 1);
 
-  // Append to the list
-  taskList.appendChild(li);
+        // Step 2: Re-render the task list
+        renderTask();
+      }, 400); // match your CSS animation duration
+    };
 
-  const deleteBtn = document.createElement("button");
-  deleteBtn.classList.add("delete-btn");
-  deleteBtn.textContent = "✔️"; // ❌
-  deleteBtn.onclick = () => {
-    li.classList.add("removing");
-    // setTimeout(callback, delayInMilliseconds),  matches transition time 400ms,
-    setTimeout(() => li.remove(), 400);
-  };
-  li.appendChild(deleteBtn);
+    li.appendChild(deleteBtn);
+    // Append to the list
+    taskList.appendChild(li);
+  }
 }
